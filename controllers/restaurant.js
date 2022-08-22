@@ -142,6 +142,26 @@ exports.getAllRestaurantsByFilter=(req,res)=>{
 
 
 
+exports.getRestaurantByMealtype=(req,res)=>{
+    const {mealtypeId}=req.params
+     let criteria = {'type.mealtype':{$in:{mealtypeId}}}
+    
+     Restaurants.find(criteria).then(result=>{
+         res.status(200).json({
+             message:"filtered successfully",
+             data:result
+         })
+     })
+     .catch(error=>{
+         res.status(500).json({
+             message:"error occured",
+             error:error
+         })
+     })
+ 
+ 
+ }
+
 
 
 
