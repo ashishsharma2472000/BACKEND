@@ -11,6 +11,7 @@ router.get('/:cName',restaurantcontroller.getRestaurantBycity)
 
 router.get('/details/:name',restaurantcontroller.getRestaurantDetails)
 
+router.get('/filter/:mealtypeId',restaurantcontroller.getRestaurantByMealtype)
 
 router.post('/filter/:pageNo',restaurantcontroller.getAllRestaurantsByFilter)
 
